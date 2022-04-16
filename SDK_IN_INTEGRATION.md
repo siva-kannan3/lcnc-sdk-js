@@ -50,18 +50,19 @@ let value = kf.formatter.toDateTime("2021-08-26T14:30");
 let value = kf.formatter.toDateTime("2021-08-26T14:30",CUSTOM_TIMEZONE_ID);
 ```
 ##### Convert to Kissflow number format
-This function lets you transform your number into Kissflow's number format.
+This function lets you transform your number into Kissflow's number format. This conversion is based on locale. By default the CUSTOM_LOCALE points to "en-US" locale. If you want to customize the locale, refer this [table](https://www.npmjs.com/package/locale-codes#locale-list) and get the respective Tag for your locale.
 ```js
-kf.formatter.toNumber("1,00,000.500000").then((res) => {...})
+kf.formatter.toNumber("1,00,000.500000",CUSTOM_LOCALE).then((res) => {...})
 // or
-let value = kf.formatter.toNumber("1,00,000.500000");
+let value = kf.formatter.toNumber("1,00,000.500000",CUSTOM_LOCALE);
 ```
 ##### Convert to Kissflow currency format
-This function lets you transform your current values into Kissflow's currency format.
+This function lets you transform your current values into Kissflow's currency format. 
+This conversion is based on locale. By default the CUSTOM_LOCALE points to "en-US" locale. If you want to customize the locale, refer this [table](https://www.npmjs.com/package/locale-codes#locale-list) and get the respective Tag for your locale.
 ```js
-kf.formatter.toCurrency("1,00,000.500000", "USD").then((res) => {...})
+kf.formatter.toCurrency("1,00,000.500000", "USD",CUSTOM_LOCALE).then((res) => {...})
 // or
-let value = kf.formatter.toCurrency("1,00,000.500000", "USD");
+let value = kf.formatter.toCurrency("1,00,000.500000", "USD",CUSTOM_LOCALE);
 ```
 ##### Convert to boolean
 This function converts your value to a boolean value.
