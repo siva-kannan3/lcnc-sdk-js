@@ -31,20 +31,23 @@ let resp = await kf.api(url, config)
 
 ### 3) Formatter functions
 ##### Convert to Kissflow date format
-This function lets you transform your date into Kissflow's date format. This conversion is based on the date format specified in your Kissflow account format settings.
-
+This function lets you transform your date into Kissflow's date format. By default this conversion is based on the account timezone. If you want to customize the function for your timezone, you can optionally pass timeZone as second parameter to the function. Refer this [timezone list](https://github.com/siva-kannan3/lcnc-sdk-js/blob/readme/TIMEZONE.md#supported-timezone-list).
 ```js
 kf.formatter.toDate("08-24-2021").then((res) => {...})
+kf.formatter.toDate("08-24-2021",CUSTOM_TIMEZONE_ID).then((res) => {...})
 // or
 let value = kf.formatter.toDate("08-24-2021");
+let value = kf.formatter.toDate("08-24-2021",CUSTOM_TIMEZONE_ID);
 ```
 ##### Convert to Kissflow DateTime format
-This function lets you transform your date and time into Kissflow's DateTime format. This conversion is based on the time zone and date format specified in your Kissflow account format settings.
+This function lets you transform your date and time into Kissflow's DateTime format. By default this conversion is based on the account timezone. If you want to customize the function for your timezone, you can optionally pass timeZone as second parameter to the function. Refer this [timezone list](https://github.com/siva-kannan3/lcnc-sdk-js/blob/readme/TIMEZONE.md#supported-timezone-list).
 
 ```js
 kf.formatter.toDateTime("2021-08-26T14:30").then((res) => {...})
+kf.formatter.toDateTime("2021-08-26T14:30",CUSTOM_TIMEZONE_ID).then((res) => {...})
 // or
 let value = kf.formatter.toDateTime("2021-08-26T14:30");
+let value = kf.formatter.toDateTime("2021-08-26T14:30",CUSTOM_TIMEZONE_ID);
 ```
 ##### Convert to Kissflow number format
 This function lets you transform your number into Kissflow's number format.
